@@ -1,0 +1,6 @@
+<% if @user.vehicles.any? %>
+    <h3>Vehicles (<%= @user.vehicles.count %>)</h3>
+    <ol class="vehicles-list">
+      <%= render @vehicles %>
+    </ol>
+<% end %>
