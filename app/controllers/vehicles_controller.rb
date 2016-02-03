@@ -9,7 +9,7 @@ class VehiclesController < ApplicationController
       redirect_to current_user
     else
       flash[:danger] = "Houston, we got a problem!"
-      render current_user
+      redirect_to current_user
     end
   end
 
