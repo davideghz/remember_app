@@ -44,7 +44,10 @@ class VehiclesController < ApplicationController
     # Each user can remove only the vehicles he owns
     def correct_user
       @vehicle = current_user.vehicles.find_by(id: params[:id])
-      redirect_to root_url if @vehicle.nil?
+      if @vehicle.nil?
+        flash[:danger] = "You can't access this vehicle!"
+        redirect_to root_url
+      end
     end
 
 end

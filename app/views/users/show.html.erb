@@ -1,13 +1,13 @@
-  <%= form_for(@vehicle) do |f| %>
+<%= form_for(@vehicle) do |f| %>
 
-      <%= f.label :name, "Vehicle name" %>
-      <%= f.text_field :name, class: 'form-control' %>
+    <%= f.label :name, "Vehicle name" %>
+    <%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :matriculation_date %>
-      <%= f.date_field :matriculation_date, class: 'form-control' %>
+    <%= f.label :matriculation_date %>
+    <%= f.date_field :matriculation_date, class: 'form-control' %>
 
-      <%= f.submit "Add", class: "btn btn-primary" %>
-  <% end %>
+    <%= f.submit "Add", class: "btn btn-primary" %>
+<% end %>
 
 <h3>User email: <%= @user.email %></h3>
 
