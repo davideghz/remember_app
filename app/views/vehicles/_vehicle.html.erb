@@ -1,7 +1,17 @@
-<li id="micropost-<%= vehicle.id %>">
-  <span class="name"><%= vehicle.name %></span>
-  <span class="matriculation"><%= vehicle.matriculation_date %></span>
-  <span class="id"> - id: <%= vehicle.id %></span>
-  <%= link_to '<i class="fa fa-cog"></i> edit'.html_safe, edit_vehicle_path(vehicle) %>
-  <%= link_to '<i class="fa fa-trash"></i> delete'.html_safe, vehicle, method: :delete, data: { confirm: "You sure?" } %>
-</li>
+<div class="panel panel-default">
+  <div class="panel-heading" role="tab" id="heading-<%= vehicle.id %>">
+    <h4 class="panel-title">
+      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-<%= vehicle.id %>" aria-expanded="false" aria-controls="collapse-<%= vehicle.id %>">
+        <span class="name"><%= vehicle.name %></span>
+      </a>
+    </h4>
+  </div>
+  <div id="collapse-<%= vehicle.id %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-<%= vehicle.id %>">
+    <div class="panel-body">
+      <span class="matriculation">Matriculation date: <%= vehicle.matriculation_date %></span><br>
+      <span class="edit"><%= link_to '<i class="fa fa-cog"></i> edit'.html_safe, edit_vehicle_path(vehicle) %></span><br>
+      <span class="delete"><%= link_to '<i class="fa fa-trash"></i> delete'.html_safe, vehicle, method: :delete, data: { confirm: "You sure?" } %></span>
+
+    </div>
+  </div>
+</div>

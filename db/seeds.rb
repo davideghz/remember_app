@@ -12,6 +12,6 @@ end
 
 # Vehicles
 users = User.order(:created_at).take(6)
-50.times do |n|
+3.times do |n|
   users.each { |user| user.vehicles.create!(name: "car-#{n+1}", matriculation_date: rand(10.years).seconds.ago) }
 end

@@ -1,19 +1,39 @@
-<%= form_for(@vehicle) do |f| %>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  <%= icon('fa fa-plus') %> Add vehicle
+</button>
 
-    <%= f.label :name, "Vehicle name" %>
-    <%= f.text_field :name, class: 'form-control' %>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for(@vehicle) do |f| %>
 
-    <%= f.label :matriculation_date %>
-    <%= f.date_field :matriculation_date, class: 'form-control' %>
+            <%= f.label :name, "Vehicle name" %>
+            <%= f.text_field :name, class: 'form-control' %>
 
-    <%= f.submit "Add", class: "btn btn-primary" %>
-<% end %>
-
-<h3>User email: <%= @user.email %></h3>
+            <%= f.label :matriculation_date %>
+            <%= f.date_field :matriculation_date, class: 'form-control' %>
+      </div>
+      <div class="modal-footer">
+            <%= f.submit "Add", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <% if @user.vehicles.any? %>
-    <h3>Vehicles (<%= @user.vehicles.count %>)</h3>
-    <ol class="vehicle-list">
-      <%= render @vehicles %>
-    </ol>
+  <h3>Vehicles (<%= @user.vehicles.count %>)</h3>
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+    <%= render @vehicles %>
+  </div>
+<% else %>
+  <h3>There are no registered vehicles</h3>
 <% end %>
+
