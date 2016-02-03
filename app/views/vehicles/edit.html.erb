@@ -1,0 +1,11 @@
+<%= form_for(@vehicle) do |f| %>
+
+    <!-- removing , "Insert your name" after :name Rails will display Name as label -->
+    <%= f.label :name, "Edit name" %>
+    <%= f.text_field :name, class: 'form-control' %>
+
+    <%= f.label :matriculation_date, "Edit matriculation date" %>
+    <%= f.date_field :matriculation_date, class: 'form-control' %>
+
+    <%= f.submit "Save changes", class: "btn btn-primary" %>
+<% end %>

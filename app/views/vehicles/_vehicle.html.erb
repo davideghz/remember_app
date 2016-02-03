@@ -1,5 +1,7 @@
 <li id="micropost-<%= vehicle.id %>">
   <span class="name"><%= vehicle.name %></span>
   <span class="matriculation"><%= vehicle.matriculation_date %></span>
-  <%= link_to "delete", vehicle, method: :delete, data: { confirm: "You sure?" } %>
+  <span class="id"> - id: <%= vehicle.id %></span>
+  <%= link_to '<i class="fa fa-cog"></i> edit'.html_safe, edit_vehicle_path %>
+  <%= link_to '<i class="fa fa-trash"></i> delete'.html_safe, vehicle, method: :delete, data: { confirm: "You sure?" } %>
 </li>

@@ -11,7 +11,6 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
-end
 
   private
 
@@ -22,3 +21,5 @@ end
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user == @user
     end
+
+end

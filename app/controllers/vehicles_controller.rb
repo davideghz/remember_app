@@ -1,6 +1,6 @@
 class VehiclesController < ApplicationController
   before_action :authenticate_user!,  only: [:create, :destroy] #-> routes to the login / signup if not authenticated
-  before_action :correct_user,        only: :destroy
+  before_action :correct_user,        only: [:destroy, :edit, :update]
 
   def create
     @vehicle = current_user.vehicles.build(vehicle_params)
@@ -13,6 +13,20 @@ class VehiclesController < ApplicationController
     end
   end
 
+  def edit
+    # @vehicle is already defined in correct_user which is called before_action
+  end
+
+  def update
+    # @vehicle is already defined in correct_user which is called before_action
+    if @vehicle.update_attributes(vehicle_params)
+      flash[:success] = "Vehicle updated"
+      redirect_to current_user
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @vehicle.destroy
     flash[:success] = "Vehicle removed"
@@ -21,11 +35,9 @@ class VehiclesController < ApplicationController
 
   private
 
-  def vehicle_params
-    params.require(:vehicle).permit(:name, :matriculation_date)
-  end
-
-  private
+    def vehicle_params
+      params.require(:vehicle).permit(:name, :matriculation_date)
+    end
 
     # before filters
 
