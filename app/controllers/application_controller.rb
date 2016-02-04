@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def send_email
-    RandomEmail.send_random_email(current_user)
+    RandomEmail.send_random_email(current_user).deliver_now
     redirect_to root_url
   end
 
