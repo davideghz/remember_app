@@ -1,7 +1,11 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-  <%= icon('fa fa-plus') %> Add vehicle
-</button>
+<div class="page-header">
+  <h3>Vehicles (<%= @user.vehicles.count %>)
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    <%= icon('fa fa-plus') %> Add vehicle
+  </button>
+  </h3>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -13,10 +17,8 @@
       </div>
       <div class="modal-body">
         <%= form_for(@vehicle) do |f| %>
-
             <%= f.label :name, "Vehicle name" %>
             <%= f.text_field :name, class: 'form-control' %>
-
             <%= f.label :matriculation_date %>
             <%= f.date_field :matriculation_date, class: 'form-control' %>
             <%= f.submit "Add", class: "btn btn-primary" %>
@@ -27,7 +29,6 @@
 </div>
 
 <% if @user.vehicles.any? %>
-  <h3>Vehicles (<%= @user.vehicles.count %>)</h3>
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
     <%= render @vehicles %>
   </div>
