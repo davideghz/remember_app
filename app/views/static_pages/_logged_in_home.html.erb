@@ -2,5 +2,5 @@
   <h1>logged in</h1>
   <p><%= link_to "See your profile", current_user %></p>
   <p><%= link_to "See index of users", users_path %></p>
-  <p><%= link_to "Send me a dummy email", controller: 'application', action: 'send_email' %></p>
+  <p><%= link_to "Send me a dummy email", controller: 'users', action: 'send_email'%></p>
 </div>
