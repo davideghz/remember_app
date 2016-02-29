@@ -5,7 +5,9 @@ task :send_reminders => :environment do
   @users = User.all
 
   @users.each do |user|
-    user.send_email
+    #user.send_email
+    RandomEmail.send_random_email(user).deliver
+    puts user.email
   end
 
 end
