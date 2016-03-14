@@ -17,9 +17,14 @@ ActiveRecord::Schema.define(version: 20160314141604) do
     t.string   "name"
     t.date     "issue_date"
     t.date     "expiry_date"
+    t.integer  "vehicles_id"
+    t.integer  "users_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "insurances", ["users_id"], name: "index_insurances_on_users_id"
+  add_index "insurances", ["vehicles_id"], name: "index_insurances_on_vehicles_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
