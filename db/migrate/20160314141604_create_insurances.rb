@@ -5,8 +5,8 @@ class CreateInsurances < ActiveRecord::Migration
       t.date :issue_date
       t.date :expiry_date
 
-      t.belongs_to :vehicles, index: true
-      t.belongs_to :users, index: true
+      t.belongs_to :vehicle, index: true
+      t.belongs_to :user, index: true
 
       t.timestamps null: false
     end
