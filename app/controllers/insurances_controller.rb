@@ -1,6 +1,6 @@
 class InsurancesController < ApplicationController
   def create
-    @insurance = current_user.vehicles.insurances.build(insurance_params)
+    @insurance = current_user.vehicles.insurance.build(insurance_params)
     if @insurance.save
       flash[:success] = "New insurance added!"
       redirect_to current_user
