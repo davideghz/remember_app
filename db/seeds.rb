@@ -19,3 +19,10 @@ users = User.order(:created_at).take(2)
 3.times do |n|
   users.each { |user| user.vehicles.create!(name: "car-#{n+1}", matriculation_date: rand(10.years).seconds.ago) }
 end
+
+# Seed all vehicles with insurance
+vehicles = Vehicle.all
+
+  vehicles.each { |vehicle| vehicle.insurances.create!(name: "test insurance",
+                                                        issue_date: rand(10.years).seconds.ago,
+                                                        expiry_date: rand(10.years).seconds.ago)}
