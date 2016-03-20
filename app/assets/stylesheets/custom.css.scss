@@ -78,14 +78,36 @@ footer {
 
 /* vehicle list */
 
-.panel-heading a:after {
+.panel-heading {
+  text-decoration: none;
+}
+
+.panel-heading:hover {
+  background-color: #e9e9e9;
+  text-decoration: none;
+}
+
+.panel-heading h4:after {
   font-family:'Glyphicons Halflings';
   content:"\e114";
   float: right;
   color: grey;
 }
-.panel-heading a.collapsed:after {
+
+/* to-do this doesn't work */
+.panel-heading h4.collapsed:after {
   content:"\e080";
+}
+
+.panel-heading {
+  display: block;
+  cursor: pointer;
+}
+
+/* cards */
+
+.thumbnail {
+  padding:0;
 }
 
 /* forms */

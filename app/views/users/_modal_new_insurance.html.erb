@@ -1,0 +1,25 @@
+<!-- Modal form to create new Insurances -->
+<div class="modal fade" id="newInsurance" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Insurance information</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for(@insurance) do |f| %>
+            <%= f.label :name, "Insurance name" %>
+            <%= f.text_field :name, class: 'form-control' %>
+
+            <%= f.label :issue_date %>
+            <%= f.date_field :issue_date, class: 'form-control' %>
+
+            <%= f.label :expiry_date %>
+            <%= f.date_field :expiry_date, class: 'form-control' %>
+
+            <%= f.submit "Add", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

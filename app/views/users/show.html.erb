@@ -1,33 +1,19 @@
 <div class="page-header">
   <h3>Vehicles (<%= @user.vehicles.count %>)
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newVehicle">
     <%= icon('fa fa-plus') %> Add vehicle
   </button>
   </h3>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Add a vehicle to the list</h4>
-      </div>
-      <div class="modal-body">
-        <%= form_for(@vehicle) do |f| %>
-            <%= f.label :name, "Vehicle name" %>
-            <%= f.text_field :name, class: 'form-control' %>
-            <%= f.label :matriculation_date %>
-            <%= f.date_field :matriculation_date, class: 'form-control' %>
-            <%= f.submit "Add", class: "btn btn-primary" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- Modal form to create new Vehicles -->
+<%= render 'users/modal_new_vehicle' %>
 
+<!-- Modal form to create new Insurance -->
+<%= render 'users/modal_new_insurance' %>
+
+<!-- List all user's vehicles, if any -->
 <% if @user.vehicles.any? %>
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
     <%= render @vehicles %>

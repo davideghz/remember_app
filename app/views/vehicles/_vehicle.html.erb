@@ -1,17 +1,45 @@
 <div class="panel panel-default">
-  <div class="panel-heading" role="tab" id="heading-<%= vehicle.id %>">
+  <a class="panel-heading" data-toggle="collapse" data-parent="#accordion" role="tab" id="heading-<%= vehicle.id %>" data-target="#collapse-<%= vehicle.id %>">
     <h4 class="panel-title">
-      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-<%= vehicle.id %>" aria-expanded="false" aria-controls="collapse-<%= vehicle.id %>">
-        <span class="name"><%= vehicle.name %></span>
-      </a>
+      <%= vehicle.name %>
     </h4>
-  </div>
+  </a>
   <div id="collapse-<%= vehicle.id %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-<%= vehicle.id %>">
     <div class="panel-body">
-      <span class="matriculation">Matriculation date: <%= vehicle.matriculation_date %></span><br>
-      <span class="edit"><%= link_to '<i class="fa fa-cog"></i> edit'.html_safe, edit_vehicle_path(vehicle) %></span><br>
-      <span class="delete"><%= link_to '<i class="fa fa-trash"></i> delete'.html_safe, vehicle, method: :delete, data: { confirm: "You sure?" } %></span>
+      <div class="container">
+        <div class="row">
 
+          <div class="col-xs-18 col-sm-6 col-md-3">
+            <div class="thumbnail">
+              <div class="caption">
+                <h4>Vehicle settings</h4>
+                <p>Matriculation date: <%= vehicle.matriculation_date %></p>
+                <span class="edit"><%= link_to '<i class="fa fa-cog"></i> edit'.html_safe, edit_vehicle_path(vehicle) %></span><br>
+                <span class="delete"><%= link_to '<i class="fa fa-trash"></i> delete'.html_safe, vehicle, method: :delete, data: { confirm: "You sure?" } %></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-18 col-sm-6 col-md-3">
+            <div class="thumbnail">
+              <div class="caption">
+                <h4>Insurance</h4>
+
+                <% if vehicle.insurance %>
+                  <p>Issue date: <%= vehicle.insurance.issue_date %></p>
+                  <p>Expiry date: <%= vehicle.insurance.expiry_date %></p>
+                <% else %>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newInsurance">
+                    <%= icon('fa fa-plus') %> Add Insurance
+                  </button>
+                <% end %>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
 </div>

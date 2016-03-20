@@ -1,0 +1,20 @@
+<!-- Modal form to create new Vehicles -->
+<div class="modal fade" id="newVehicle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add a vehicle to the list</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for(@vehicle) do |f| %>
+            <%= f.label :name, "Vehicle name" %>
+            <%= f.text_field :name, class: 'form-control' %>
+            <%= f.label :matriculation_date %>
+            <%= f.date_field :matriculation_date, class: 'form-control' %>
+            <%= f.submit "Add", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

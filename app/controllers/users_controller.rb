@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @vehicles = @user.vehicles
     @vehicle = current_user.vehicles.build if user_signed_in?
+    @insurance = current_user.insurances.build if user_signed_in?
   end
 
   def index

@@ -27,8 +27,10 @@ users = User.order(:created_at).take(2)
 end
 
 # Seed all vehicles with insurance
-vehicles = Vehicle.all
 
-  vehicles.each { |vehicle| Insurance.create!(vehicle:vehicle, name: "test insurance",
-                                                        issue_date: rand(10.years).seconds.ago,
-                                                        expiry_date: rand(10.years).seconds.ago)}
+vehicles = Vehicle.all
+vehicles.each { |vehicle| Insurance.create!(vehicle: vehicle,
+                                            name: "test insurance",
+                                            issue_date: rand(10.years).seconds.ago,
+                                            expiry_date: rand(10.years).seconds.ago,
+                                            user_id: vehicle.user_id)}
