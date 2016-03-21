@@ -3,6 +3,7 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import 'http://fonts.googleapis.com/css?family=Roboto:700,400';
 
 /* mixins, variables, etc. */
 
@@ -16,6 +17,15 @@
 
 body {
   padding-top: 60px;
+  font-family: Roboto;
+}
+
+a {
+  text-decoration: none;
+  color: #3498db;
+}
+a:hover {
+  color: #2980b9;
 }
 
 section {
@@ -51,6 +61,7 @@ h2 {
   font-weight: normal;
   color: #777;
 }
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -78,23 +89,14 @@ footer {
 
 /* vehicle list */
 
-.panel-heading {
-  text-decoration: none;
+.thumbnail {
+  -webkit-box-shadow: 0px 1px 1px -1px rgba(51,51,51,1);
+  -moz-box-shadow: 0px 1px 1px -1px rgba(51,51,51,1);
+  box-shadow: 0px 1px 1px -1px rgba(51,51,51,1);
+  border-radius: 0px;
 }
 
-.panel-heading:hover {
-  background-color: #e9e9e9;
-  text-decoration: none;
-}
-
-.panel-heading h4:after {
-  font-family:'Glyphicons Halflings';
-  content:"\e114";
-  float: right;
-  color: grey;
-}
-
-/* to-do this doesn't work */
+/* todo: this doesn't work */
 .panel-heading h4.collapsed:after {
   content:"\e080";
 }
@@ -102,12 +104,6 @@ footer {
 .panel-heading {
   display: block;
   cursor: pointer;
-}
-
-/* cards */
-
-.thumbnail {
-  padding:0;
 }
 
 /* forms */
@@ -149,4 +145,109 @@ input {
 #user_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+
+/* CARDS */
+
+/**
+ * Helpers
+ */
+
+.shadowDepth0 { box-shadow: 0 1px 3px rgba(0,0,0, 0.12); }
+
+.shadowDepth1 {
+  box-shadow:
+          0 1px 3px rgba(0,0,0, 0.12),
+          0 1px 2px rgba(0,0,0, 0.24);
+}
+
+
+/**
+ * Card Styles
+ */
+
+.card {
+  background-color: #fff;
+  margin-bottom: 1.6rem;
+}
+
+.card__padding {
+  padding: 1.6rem;
+}
+
+.card__image {
+  min-height: 100px;
+  background-color: #eee;
+}
+.card__image img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+.card__content {
+  position: relative;
+}
+
+/* card article */
+.card__article a {
+  text-decoration: none;
+  color: #444;
+  transition: all 0.5s ease;
+}
+.card__article a:hover {
+  color: #2980b9;
+}
+
+.card__article h2 {
+  line-height: 1.2;
+  margin-bottom: 1.6rem;
+  text-align: left;
+}
+
+/* card action */
+
+.card__share {
+  float: right;
+  position: relative;
+  margin-top: -40px;
+}
+
+.share-toggle:before {
+  content: "\f1b9";
+  font-family: 'FontAwesome';
+  background-color: #3498db;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.share-icon {
+  text-decoration: none;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #3498db;
+  transition: all 0.3s ease;
+  outline: 0;
+
+  box-shadow:
+          0 2px 4px rgba(0,0,0, 0.12),
+          0 2px 4px rgba(0,0,0, 0.24);
+}
+.share-icon:hover,
+.share-icon:focus {
+  box-shadow:
+          0 3px 6px rgba(0,0,0, 0.12),
+          0 3px 6px rgba(0,0,0, 0.24);
+
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+  text-decoration: none;
 }

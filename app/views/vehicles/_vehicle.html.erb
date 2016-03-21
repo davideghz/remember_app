@@ -1,45 +1,16 @@
-<div class="panel panel-default">
-  <a class="panel-heading" data-toggle="collapse" data-parent="#accordion" role="tab" id="heading-<%= vehicle.id %>" data-target="#collapse-<%= vehicle.id %>">
-    <h4 class="panel-title">
-      <%= vehicle.name %>
-    </h4>
-  </a>
-  <div id="collapse-<%= vehicle.id %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-<%= vehicle.id %>">
-    <div class="panel-body">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-xs-18 col-sm-6 col-md-3">
-            <div class="thumbnail">
-              <div class="caption">
-                <h4>Vehicle settings</h4>
-                <p>Matriculation date: <%= vehicle.matriculation_date %></p>
-                <span class="edit"><%= link_to '<i class="fa fa-cog"></i> edit'.html_safe, edit_vehicle_path(vehicle) %></span><br>
-                <span class="delete"><%= link_to '<i class="fa fa-trash"></i> delete'.html_safe, vehicle, method: :delete, data: { confirm: "You sure?" } %></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xs-18 col-sm-6 col-md-3">
-            <div class="thumbnail">
-              <div class="caption">
-                <h4>Insurance</h4>
-
-                <% if vehicle.insurance %>
-                  <p>Issue date: <%= vehicle.insurance.issue_date %></p>
-                  <p>Expiry date: <%= vehicle.insurance.expiry_date %></p>
-                <% else %>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newInsurance">
-                    <%= icon('fa fa-plus') %> Add Insurance
-                  </button>
-                <% end %>
-
-              </div>
-            </div>
-          </div>
-
-        </div>
+<div class="col-xs-18 col-sm-6 col-md-4">
+  <div class="card radius shadowDepth1">
+    <div class="card__image">
+      <img src="http://lorempixel.com/400/200/transport/" alt="image" class="border-tlr-radius">
+    </div>
+    <div class="card__content card__padding">
+      <div class="card__share">
+        <a id="share" class="share-toggle share-icon" href="#"></a>
       </div>
+      <article class="card__article">
+        <h2><%= link_to vehicle.name, vehicle %></h2>
+        <p>Matriculation date: <%= vehicle.matriculation_date %></p>
+        </article>
     </div>
   </div>
 </div>

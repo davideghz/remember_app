@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @vehicles = @user.vehicles
+    @vehicles = @user.vehicles if user_signed_in?
     @vehicle = current_user.vehicles.build if user_signed_in?
     @insurance = current_user.insurances.build if user_signed_in?
   end

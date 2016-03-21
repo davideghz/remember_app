@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :index] do
     member do
-      resources :vehicles, only: [:create, :edit, :update, :destroy] do
+      resources :vehicles, only: [:show, :create, :edit, :update, :destroy] do
         member do
           resources :insurances, only: [:create, :edit, :update, :destroy]
         end

@@ -2,6 +2,9 @@ class VehiclesController < ApplicationController
   before_action :authenticate_user!,  only: [:create, :destroy] #-> routes to the login / signup if not authenticated
   before_action :correct_user,        only: [:destroy, :edit, :update]
 
+  def show
+    @vehicle = Vehicle.find(params[:id])
+  end
 
   def create
     @vehicle = current_user.vehicles.build(vehicle_params)
@@ -13,7 +16,6 @@ class VehiclesController < ApplicationController
       redirect_to current_user
     end
   end
-
 
   def edit
     # @vehicle is already defined in correct_user which is called before_action
@@ -32,7 +34,7 @@ class VehiclesController < ApplicationController
   def destroy
     @vehicle.destroy
     flash[:success] = "Vehicle removed"
-    redirect_to request.referrer || root_url
+    redirect_to current_user
   end
 
   private

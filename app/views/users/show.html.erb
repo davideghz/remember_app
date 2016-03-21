@@ -13,12 +13,13 @@
 <!-- Modal form to create new Insurance -->
 <%= render 'users/modal_new_insurance' %>
 
-<!-- List all user's vehicles, if any -->
-<% if @user.vehicles.any? %>
-  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
-    <%= render @vehicles %>
-  </div>
-<% else %>
-  <h3>There are no registered vehicles</h3>
-<% end %>
+<div class="row">
+  <!-- List all user's vehicles, if any -->
+  <% if @user.vehicles.any? %>
+      <%= render @vehicles %>
+  <% else %>
+      <h3>There are no registered vehicles</h3>
+  <% end %>
+</div>
+
 
