@@ -7,7 +7,7 @@
         <h4 class="modal-title" id="myModalLabel">Add a vehicle to the list</h4>
       </div>
       <div class="modal-body">
-        <%= form_for(@vehicle) do |f| %>
+        <%= form_for([@user, @vehicle]) do |f| %>
             <%= f.label :name, "Vehicle name" %>
             <%= f.text_field :name, class: 'form-control' %>
             <%= f.label :matriculation_date %>

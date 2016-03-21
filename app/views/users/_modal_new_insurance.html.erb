@@ -7,7 +7,7 @@
         <h4 class="modal-title" id="myModalLabel">Add Insurance information</h4>
       </div>
       <div class="modal-body">
-        <%= form_for(@insurance) do |f| %>
+        <%= form_for([@user, @vehicle, @insurance]) do |f| %>
             <%= f.label :name, "Insurance name" %>
             <%= f.text_field :name, class: 'form-control' %>
 
