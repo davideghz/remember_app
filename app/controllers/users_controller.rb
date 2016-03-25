@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:show]
 
   def show
+    add_breadcrumb "home", :root_path
+    add_breadcrumb "user profile", :current_user
     @user = User.find(params[:id])
     @vehicles = @user.vehicles if user_signed_in?
     @vehicle = current_user.vehicles.build if user_signed_in?

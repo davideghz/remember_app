@@ -1,31 +1,37 @@
-<div class="container">
-  <div class="row">
+<ol class="breadcrumb">
+  <%= render_breadcrumbs :separator => " / " %>
+</ol>
 
-    <div class="col-xs-18 col-sm-6 col-md-3">
-      <div class="thumbnail card">
-        <div class="caption">
-          <h4>Insurance</h4>
-          <% if @vehicle.insurance %>
-              <p>Issue date: <%= @vehicle.insurance.issue_date %></p>
-              <p>Expiry date: <%= @vehicle.insurance.expiry_date %></p>
-          <% else %>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newInsurance">
-                <%= icon('fa fa-plus') %> Add Insurance
-              </button>
-          <% end %>
-        </div>
+<div class="page-header">
+  <h3><%= @vehicle.name %> <small>back</small></h3>
+</div>
+
+<div class="row">
+
+  <div class="col-xs-18 col-sm-6 col-md-3">
+    <div class="thumbnail card">
+      <div class="caption">
+        <h4>Insurance</h4>
+        <% if @vehicle.insurance %>
+            <p>Issue date: <%= @vehicle.insurance.issue_date %></p>
+            <p>Expiry date: <%= @vehicle.insurance.expiry_date %></p>
+        <% else %>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newInsurance">
+              <%= icon('fa fa-plus') %> Add Insurance
+            </button>
+        <% end %>
       </div>
     </div>
-
-    <div class="col-xs-18 col-sm-6 col-md-3">
-      <div class="thumbnail card">
-        <div class="caption">
-          <h4>Settings</h4>
-          <span class="edit"><%= link_to '<i class="fa fa-cog"></i> edit'.html_safe, edit_user_vehicle_path(@user, @vehicle) %></span><br>
-          <span class="delete"><%= link_to '<i class="fa fa-trash"></i> delete'.html_safe, [@user, @vehicle], method: :delete, data: { confirm: "You sure?" } %></span>
-        </div>
-      </div>
-    </div>
-
   </div>
+
+  <div class="col-xs-18 col-sm-6 col-md-3">
+    <div class="thumbnail card">
+      <div class="caption">
+        <h4>Settings</h4>
+        <span class="edit"><%= link_to '<i class="fa fa-cog"></i> edit'.html_safe, edit_user_vehicle_path(@user, @vehicle) %></span><br>
+        <span class="delete"><%= link_to '<i class="fa fa-trash"></i> delete'.html_safe, [@user, @vehicle], method: :delete, data: { confirm: "You sure?" } %></span>
+      </div>
+    </div>
+  </div>
+
 </div>

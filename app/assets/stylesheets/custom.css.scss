@@ -67,9 +67,15 @@ p {
   line-height: 1.7em;
 }
 
+/* breadcrumbs */
+
+.breadcrumb {
+  background-color: white;
+}
+
 /* footer */
 
-footer {
+.footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;

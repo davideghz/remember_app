@@ -5,6 +5,9 @@ class VehiclesController < ApplicationController
   def show
     @vehicle = Vehicle.find(params[:id])
     @user = User.find(params[:user_id])
+    add_breadcrumb "home", :root_path
+    add_breadcrumb "user profile", :current_user
+    add_breadcrumb :set_vehicle_name, :user_vehicle_path
   end
 
   def create
@@ -26,7 +29,7 @@ class VehiclesController < ApplicationController
     # @vehicle is already defined in correct_user which is called before_action
     if @vehicle.update_attributes(vehicle_params)
       flash[:success] = "Vehicle updated"
-      redirect_to current_user
+      redirect_to user_vehicle_path
     else
       render 'edit'
     end
@@ -54,5 +57,11 @@ class VehiclesController < ApplicationController
         redirect_to root_url
       end
     end
+
+    #return vehicle name for breadcrumb
+    def set_vehicle_name
+      @vehicle.name
+    end
+    helper_method :set_vehicle_name
 
 end
