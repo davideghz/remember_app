@@ -4,11 +4,11 @@ class UsersController < ApplicationController
 
   def show
     add_breadcrumb "home", :root_path
-    add_breadcrumb "user profile", :current_user
+    add_breadcrumb "my vehicles", :current_user
+
     @user = User.find(params[:id])
     @vehicles = @user.vehicles if user_signed_in?
-    @vehicle = current_user.vehicles.build if user_signed_in?
-    @insurance = current_user.insurances.build if user_signed_in?
+    @vehicle = current_user.vehicles.build
   end
 
   def index

@@ -102,16 +102,6 @@ p {
   border-radius: 0px;
 }
 
-/* todo: this doesn't work */
-.panel-heading h4.collapsed:after {
-  content:"\e080";
-}
-
-.panel-heading {
-  display: block;
-  cursor: pointer;
-}
-
 /* forms */
 
 input, textarea, select, .uneditable-input {

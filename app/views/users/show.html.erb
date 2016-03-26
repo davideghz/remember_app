@@ -1,14 +1,5 @@
-<ol class="breadcrumb">
-  <%= render_breadcrumbs :separator => " / " %>
-</ol>
-
 <div class="page-header">
-  <h3>Vehicles (<%= @user.vehicles.count %>)
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newVehicle">
-    <%= icon('fa fa-plus') %> Add vehicle
-  </button>
-  </h3>
+  <%= render_breadcrumbs :separator => " / " %>
 </div>
 
 <!-- Modal form to create new Vehicles -->
@@ -24,3 +15,9 @@
 </div>
 
 
+<h3>Vehicles (<%= @user.vehicles.count %>)
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newVehicle">
+    <%= icon('fa fa-plus') %> Add vehicle
+  </button>
+</h3>

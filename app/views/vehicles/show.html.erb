@@ -1,10 +1,9 @@
-<ol class="breadcrumb">
-  <%= render_breadcrumbs :separator => " / " %>
-</ol>
-
 <div class="page-header">
-  <h3><%= @vehicle.name %> <small>back</small></h3>
+  <%= render_breadcrumbs :separator => " / " %>
 </div>
+
+<!-- Modal form to create new Insurance -->
+<%= render 'vehicles/modal_new_insurance' %>
 
 <div class="row">
 
@@ -13,9 +12,11 @@
       <div class="caption">
         <h4>Insurance</h4>
         <% if @vehicle.insurance %>
-            <p>Issue date: <%= @vehicle.insurance.issue_date %></p>
-            <p>Expiry date: <%= @vehicle.insurance.expiry_date %></p>
-        <% else %>
+            <span>Issue date: <%= @vehicle.insurance.issue_date %></span><br>
+            <span>Expiry date: <%= @vehicle.insurance.expiry_date %></span><br>
+            <span class="edit"><%= link_to '<i class="fa fa-cog"></i> edit'.html_safe, edit_user_vehicle_insurance_path(@user, @vehicle, @insurance) %></span><br>
+            <span class="delete"><%= link_to '<i class="fa fa-trash"></i> delete'.html_safe, [@user, @vehicle, @vehicle.insurance], method: :delete, data: { confirm: "You sure?" } %></span>
+      <% else %>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newInsurance">
               <%= icon('fa fa-plus') %> Add Insurance
             </button>

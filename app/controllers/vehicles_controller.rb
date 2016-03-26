@@ -5,8 +5,15 @@ class VehiclesController < ApplicationController
   def show
     @vehicle = Vehicle.find(params[:id])
     @user = User.find(params[:user_id])
+
+    if @vehicle.insurance
+      @insurance = @vehicle.insurance
+    else
+      @insurance = Insurance.new
+    end
+
     add_breadcrumb "home", :root_path
-    add_breadcrumb "user profile", :current_user
+    add_breadcrumb "my vehicles", :current_user
     add_breadcrumb :set_vehicle_name, :user_vehicle_path
   end
 
