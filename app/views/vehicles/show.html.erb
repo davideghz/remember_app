@@ -14,23 +14,31 @@
         <% if @vehicle.insurance %>
             <span>Issue date: <%= @vehicle.insurance.issue_date %></span><br>
             <span>Expiry date: <%= @vehicle.insurance.expiry_date %></span><br>
-            <span class="edit"><%= link_to '<i class="fa fa-cog"></i> edit'.html_safe, edit_user_vehicle_insurance_path(@user, @vehicle, @insurance) %></span><br>
-            <span class="delete"><%= link_to '<i class="fa fa-trash"></i> delete'.html_safe, [@user, @vehicle, @vehicle.insurance], method: :delete, data: { confirm: "You sure?" } %></span>
-      <% else %>
+        <% else %>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newInsurance">
               <%= icon('fa fa-plus') %> Add Insurance
             </button>
         <% end %>
       </div>
+
+      <% if @vehicle.insurance %>
+        <div class="card-action">
+          <span class="edit"><%= link_to '<i class="fa fa-cog"></i> edit'.html_safe, edit_user_vehicle_insurance_path(@user, @vehicle, @insurance) %></span>
+          <span class="delete"><%= link_to '<i class="fa fa-trash"></i> delete'.html_safe, [@user, @vehicle, @vehicle.insurance], method: :delete, data: { confirm: "You sure?" } %></span>
+        </div>
+      <% end %>
     </div>
   </div>
 
   <div class="col-xs-18 col-sm-6 col-md-3">
     <div class="thumbnail card">
       <div class="caption">
-        <h4>Settings</h4>
-        <span class="edit"><%= link_to '<i class="fa fa-cog"></i> edit'.html_safe, edit_user_vehicle_path(@user, @vehicle) %></span><br>
-        <span class="delete"><%= link_to '<i class="fa fa-trash"></i> delete'.html_safe, [@user, @vehicle], method: :delete, data: { confirm: "You sure?" } %></span>
+        <h4>Annual vehicle tax</h4>
+          <span>coming soon</span>
+      </div>
+      <div class="card-action">
+        <span class="edit"><%= link_to '<i class="fa fa-cog"></i> edit'.html_safe, "#" %></span>
+        <span class="delete"><%= link_to '<i class="fa fa-trash"></i> delete'.html_safe, "#" %></span>
       </div>
     </div>
   </div>

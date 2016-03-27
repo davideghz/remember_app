@@ -12,5 +12,9 @@
         <p>Matriculation date: <%= vehicle.matriculation_date %></p>
         </article>
     </div>
+    <div class="card-action">
+      <span class="edit"><%= link_to '<i class="fa fa-cog"></i> edit'.html_safe, edit_user_vehicle_path(@user, vehicle) %></span>
+      <span class="delete"><%= link_to '<i class="fa fa-trash"></i> delete'.html_safe, [@user, vehicle], method: :delete, data: { confirm: "You sure?" } %></span>
+    </div>
   </div>
 </div>

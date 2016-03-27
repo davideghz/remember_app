@@ -247,3 +247,21 @@ input {
   transform: scale(1.2);
   text-decoration: none;
 }
+
+/* card in vehicle show page */
+
+.card-action {
+  border-top: 1px solid rgba(160, 160, 160, 0.2);
+  padding: 16px;
+}
+
+.card-action a {
+  margin-right: 16px;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.card-action a:hover {
+  color: #ffd8a6;
+  text-decoration: none;
+}
