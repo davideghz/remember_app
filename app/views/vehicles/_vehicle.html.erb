@@ -9,7 +9,7 @@
       </div>
       <article class="card__article">
         <h2><%= link_to vehicle.name, [@user, vehicle] %></h2>
-        <p>Matriculation date: <%= vehicle.matriculation_date %></p>
+        <p>Matriculation date: <%= vehicle.matriculation_date.strftime("%B %d, %Y") %></p>
         </article>
     </div>
     <div class="card-action">

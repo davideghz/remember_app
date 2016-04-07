@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: vehicles
+#
+#  id                 :integer          not null, primary key
+#  name               :text
+#  matriculation_date :date
+#  user_id            :integer
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#
+
 class VehiclesController < ApplicationController
   before_action :authenticate_user!,  only: [:create, :destroy] #-> routes to the login / signup if not authenticated
   before_action :correct_user,        only: [:destroy, :edit, :update]

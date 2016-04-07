@@ -4,10 +4,14 @@ task :send_reminders => :environment do
   puts "Sending reminder..."
   @users = User.all
 
+  # todo: check directly insurances and send email to user(find_by: user_id)
   @users.each do |user|
-    #user.send_email
-    RandomEmail.send_random_email(user).deliver_now
-    puts user.email
+    user.vehicles.each do |vehicle|
+      if vehicle.insurance && vehicle.insurance.expiry_date < Time.now
+        RandomEmail.send_random_email(user).deliver_now
+        puts user.email
+      end
+    end
   end
 
 end
