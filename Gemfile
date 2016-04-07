@@ -33,6 +33,9 @@ group :development do
 
   # Output scheme structure in Models
   gem 'annotate'
+
+  # Catches all mail and stores it for display.
+  gem 'mailcatcher'
 end
 
 group :production do
