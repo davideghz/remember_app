@@ -8,11 +8,12 @@
 #  user_id            :integer
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
+#  vehicle_picture    :string
 #
 
 class VehiclesController < ApplicationController
   before_action :authenticate_user!,  only: [:create, :destroy] #-> routes to the login / signup if not authenticated
-  before_action :correct_user,        only: [:destroy, :edit, :update]
+  before_action :correct_user,        only: [:destroy, :edit, :update, :edit_image]
 
   def show
     @vehicle = Vehicle.find(params[:id])
@@ -44,6 +45,10 @@ class VehiclesController < ApplicationController
     # @vehicle is already defined in correct_user which is called before_action
   end
 
+  def edit_image
+    # @vehicle is already defined in correct_user which is called before_action
+  end
+
   def update
     # @vehicle is already defined in correct_user which is called before_action
     if @vehicle.update_attributes(vehicle_params)
@@ -63,7 +68,7 @@ class VehiclesController < ApplicationController
   private
 
     def vehicle_params
-      params.require(:vehicle).permit(:name, :matriculation_date)
+      params.require(:vehicle).permit(:name, :matriculation_date, :vehicle_picture)
     end
 
     # before filters

@@ -1,0 +1,21 @@
+<div class="center">
+  <%= image_tag @vehicle.vehicle_picture.url if @vehicle.vehicle_picture? %>
+</div>
+
+<%= form_for([current_user, @vehicle], html: { multipart: true }) do |f| %>
+
+  <%= f.file_field :vehicle_picture, class: "uploader", accept: 'image/jpeg,image/gif,image/png' %>
+  <%= f.submit "Save changes", class: "btn btn-primary" %>
+<% end %>
+
+<br>
+<p class="center"><%= link_to('back', current_user) %></p></br>
+
+<script type="text/javascript">
+  $('#vehicle_vehicle_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 2) {
+      alert('Maximum file size is 1MB. Please choose a smaller file.');
+    }
+  });
+</script>

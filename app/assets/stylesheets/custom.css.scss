@@ -26,6 +26,12 @@ a {
 }
 a:hover {
   color: #2980b9;
+  text-decoration: none;
+}
+
+.delete-link:hover {
+  color: red;
+  text-decoration: none;
 }
 
 section {
@@ -143,6 +149,10 @@ input {
   margin-left: 0;
 }
 
+.uploader {
+  padding: 10px;
+}
+
 
 /* CARDS */
 
@@ -210,8 +220,16 @@ input {
   margin-top: -40px;
 }
 
-.share-toggle:before {
-  content: "\f1b9";
+.edit-button:before {
+  content: "\f040";
+  font-family: 'FontAwesome';
+  background-color: #3498db;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.pic-button:before {
+  content: "\f03e";
   font-family: 'FontAwesome';
   background-color: #3498db;
   color: #ffffff;

@@ -10,4 +10,5 @@
     <%= f.submit "Save changes", class: "btn btn-primary" %>
 <% end %>
 <br>
-<p class="center"><%= link_to('back', current_user) %></p>
+<p class="center"><%= link_to('back', current_user) %></p></br>
+<p class="center"><%= link_to '<i class="fa fa-trash"></i> delete vehicle'.html_safe, [current_user, @vehicle], method: :delete, data: { confirm: "You sure?" }, class: "delete-link" %></p>
