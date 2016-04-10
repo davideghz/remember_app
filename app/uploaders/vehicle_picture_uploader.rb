@@ -3,7 +3,7 @@
 class VehiclePictureUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::MiniMagick
-  process resize_to_fill: [400, 400]
+  process resize_to_fill: [400, 200]
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick

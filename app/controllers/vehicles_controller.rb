@@ -26,7 +26,7 @@ class VehiclesController < ApplicationController
     end
 
     add_breadcrumb "home", :root_path
-    add_breadcrumb "my vehicles", :current_user
+    add_breadcrumb "my vehicles #{@user.vehicles.count}", :current_user #todo: breadcrum does not display number of vehicles
     add_breadcrumb :set_vehicle_name, :user_vehicle_path
   end
 
