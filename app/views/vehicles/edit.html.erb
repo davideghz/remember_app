@@ -1,14 +1,19 @@
-<%= form_for([current_user, @vehicle]) do |f| %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 ">
 
-    <!-- removing , "Insert your name" after :name Rails will display Name as label -->
-    <%= f.label :name, "Edit name" %>
-    <%= f.text_field :name, class: 'form-control' %>
+    <%= form_for([current_user, @vehicle]) do |f| %>
+        <!-- removing , "Insert your name" after :name Rails will display Name as label -->
+        <%= f.label :name, "Edit name" %>
+        <%= f.text_field :name, class: 'form-control' %>
 
-    <%= f.label :matriculation_date, "Edit matriculation date" %>
-    <%= f.date_field :matriculation_date, class: 'form-control' %>
+        <%= f.label :matriculation_date, "Edit matriculation date" %>
+        <%= f.date_field :matriculation_date, class: 'form-control' %>
 
-    <%= f.submit "Save changes", class: "btn btn-primary" %>
-<% end %>
-<br>
-<p class="center"><%= link_to('back', current_user) %></p></br>
-<p class="center"><%= link_to '<i class="fa fa-trash"></i> delete vehicle'.html_safe, [current_user, @vehicle], method: :delete, data: { confirm: "You sure?" }, class: "delete-link" %></p>
+        <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+    <br>
+    <p class="center"><%= link_to('back', current_user) %></p></br>
+    <p class="center"><%= link_to '<i class="fa fa-trash"></i> delete vehicle'.html_safe, [current_user, @vehicle], method: :delete, data: { confirm: "You sure?" }, class: "delete-link" %></p>
+
+  </div>
+</div>

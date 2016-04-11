@@ -1,6 +1,10 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3 center uploaded-image">
-    <%= image_tag @vehicle.vehicle_picture.url if @vehicle.vehicle_picture? %>
+    <div class="card__image">
+      <% if @vehicle.vehicle_picture? %>
+          <%= image_tag @vehicle.vehicle_picture.url %>
+      <% end %>
+    </div>
   </div>
 </div>
 
