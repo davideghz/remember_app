@@ -15,4 +15,6 @@
 class Insurance < ActiveRecord::Base
   belongs_to :vehicle
   belongs_to :user
+  validates :vehicle, presence: true
+  validates :user, presence: true
 end
