@@ -1,2 +1,6 @@
 en:
   fuck_you: "Fuck You!"
+
+  random_email:
+    send_random_email:
+      subject: "This is a random email!"
