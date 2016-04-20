@@ -4,16 +4,18 @@ Vehicle.delete_all
 
 # Users
 user = User.new(email: "davideghz@gmail.com",
-                password: "12345678")
+                password: "12345678",
+                admin: true)
 user.skip_confirmation! # it sets confirmed_at: DateTime.now
 user.save!
 
 
-5.times do |n|
+50.times do |n|
   email = "example-#{n+1}@example.org"
   password = "12345678"
   user = User.new(email: email,
-                  password: password)
+                  password: password,
+                  admin: false)
   user.skip_confirmation!
   user.save!
 end

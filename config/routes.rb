@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     root 'static_pages#home'
     devise_for :users
 
-    resources :users, only: [:show, :index] do
+    resources :users, only: [:show, :index, :destroy] do
       resources :vehicles, only: [:show, :create, :edit, :update, :destroy] do
         member do
           get :edit_image

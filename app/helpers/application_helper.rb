@@ -9,4 +9,8 @@ module ApplicationHelper
     end
   end
 
+  def flash_normal
+    render "layouts/flashmessages"
+  end
+
 end

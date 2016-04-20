@@ -1,8 +1,4 @@
 <h3>User list (you cannot access other users' profile)</h3>
-<% @users.each do |user| %>
-    <% if user == current_user %>
-      <%= link_to user.email, user %> - hey this is you!<br>
-    <% else %>
-      <%= link_to user.email, user %><br>
-    <% end %>
-<% end %>
+<ul class="users">
+  <%= render @users %>
+</ul>

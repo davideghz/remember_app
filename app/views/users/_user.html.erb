@@ -1,0 +1,10 @@
+<li id="user-<%= user.id %>">
+  <% if user == current_user %>
+      <%= link_to user.email, user %> - hey this is you!
+  <% else %>
+      <%= link_to user.email, user %>
+  <% end %>
+  <% if current_user.admin? %>
+      <%= link_to icon('times-circle'), user, remote: true, method: :delete, data: { confirm: "You sure?" } %>
+  <% end %>
+</li>
