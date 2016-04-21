@@ -23,10 +23,10 @@ Rails 4.2.5
 - displaying flash messages
 - allow images uploading
 - internationalize the website
+- internationalize emails (send emails using user's custom set language)
 
 ## future goals
 
-- internationalize emails (send emails using user's custom set language)
 - enable images saving to AWS
 - use background jobs queues (mail?)
 - integrate some API
