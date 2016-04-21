@@ -4,12 +4,4 @@
   <p><%= link_to "See index of users", users_path %></p>
   <p><%= link_to "Send me a dummy email", controller: 'users', action: 'send_email'%></p>
   <h1><%= t :fuck_you %></h1>
-
-  <% if I18n.locale == I18n.default_locale %>
-      <p>Hey! insult me in <%= link_to "Italiano", :locale=>'it'%>, if you dare!</p>
-
-  <% else %>
-      <p>Hey! insultami in <%= link_to "English", :locale=>'en'%>, se hai il coraggio!</p>
-
-  <%end%>
 </div>

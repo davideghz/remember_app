@@ -40,6 +40,17 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def update
+    @user = User.find(params[:id])
+    @user.update_attributes(user_params)
+
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
+
+  end
+
   def destroy
     @user = User.find(params[:id])
     @user.destroy
@@ -61,6 +72,10 @@ class UsersController < ApplicationController
   private
 
     # before filters
+
+    def user_params
+      params.require(:user).permit(:locale)
+    end
 
     # Each user can access only his own profile
     def correct_user
