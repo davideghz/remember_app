@@ -242,7 +242,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   if Rails.env.development?
-    config.omniauth :facebook, "200949410291157", "44cbab0c2bf9c2ece364dc1c65b0b822"
+    config.omniauth :facebook, "200949410291157", "44cbab0c2bf9c2ece364dc1c65b0b822", provider_ignores_state: true
   else
     config.omniauth :facebook, "200935210292577", "2ece99f5a3b43ae963d6d6ac1856c30d"
   end
