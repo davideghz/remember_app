@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
+  devise_for :users, only: :omniauth_callbacks, controllers: {omniauth_callbacks: 'users/omniauth_callbacks'}
+
   scope "(:locale)" do
     root 'static_pages#home'
-    devise_for :users
+
+    devise_for :users, skip: :omniauth_callbacks
 
     resources :users, only: [:show, :index, :update, :destroy] do
       resources :vehicles, only: [:show, :create, :edit, :update, :destroy] do

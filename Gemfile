@@ -16,6 +16,8 @@ gem 'breadcrumbs_on_rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
+# Facebook OAuth2 Strategy for OmniAuth
+gem 'omniauth-facebook'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
