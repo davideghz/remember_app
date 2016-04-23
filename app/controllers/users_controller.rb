@@ -20,6 +20,10 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  admin                  :boolean          default(FALSE)
+#  locale                 :string           default("it")
+#  provider               :string
+#  uid                    :string
+#  name                   :string
 #
 
 class UsersController < ApplicationController
