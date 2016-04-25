@@ -10,6 +10,10 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+# fast JSON generation and parsing for JRuby
+gem 'json'
+# open an http, https or ftp URL as though it were a file
+require 'open-uri'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise', '~> 3.5', '>= 3.5.5'
 gem 'breadcrumbs_on_rails'
@@ -18,9 +22,6 @@ gem 'mini_magick'
 gem 'fog'
 # Facebook OAuth2 Strategy for OmniAuth
 gem 'omniauth-facebook'
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
   gem 'sqlite3'

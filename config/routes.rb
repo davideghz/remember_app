@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   scope "(:locale)" do
     root 'static_pages#home'
+    post '/' => 'static_pages#home'
 
     devise_for :users, skip: :omniauth_callbacks
 

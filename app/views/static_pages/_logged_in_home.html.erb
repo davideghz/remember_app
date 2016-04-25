@@ -1,7 +1,25 @@
-<div class="center">
-  <h1>logged in</h1>
-  <p><%= link_to "See your profile", current_user %></p>
-  <p><%= link_to "See index of users", users_path %></p>
-  <p><%= link_to "Send me a dummy email", controller: 'users', action: 'send_email'%></p>
-  <h1><%= t :fuck_you %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 center">
+    <h1>logged in</h1>
+    <p><%= link_to "See your profile", current_user %></p>
+    <p><%= link_to "See index of users", users_path %></p>
+    <p><%= link_to "Send me a dummy email", controller: 'users', action: 'send_email'%></p>
+    <h1><%= t :fuck_you %></h1>
+
+    <%= form_tag('/', method: :post) do %>
+        <div class="form-group">
+          <%= label_tag :address, "Insert your address" %>
+          <div class="input-group">
+            <%= content_tag(:div, icon('home'), class: "input-group-addon") %>
+            <%= text_field_tag :address, "", class: 'form-control' %>
+          </div>
+        </div>
+        <%= submit_tag "Get coordinates", class: "btn btn-primary" %>
+    <% end %>
+    <hr>
+    <p>coordinates for address <strong><%= @address.blank? ? "(insert address)" : @address %></strong></p>
+    <p>latitude: <%= GoogleMapsService.give_coordinates(@address, "lat") %></p>
+    <p>longitude: <%= GoogleMapsService.give_coordinates(@address, "lng") %></p>
+
+  </div>
 </div>

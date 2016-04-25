@@ -53,11 +53,10 @@ class User < ActiveRecord::Base
       return_user.provider = auth.provider
       return_user.uid = auth.uid
     else
-      return_user = self.create do |user|
-        user.provider = auth.provider
-        user.uid = auth.uid
+      return_user = where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.name = auth.info.name
         user.email = auth.info.email
+        user.password = Devise.friendly_token[0,20]
         # user.oauth_token = auth.credentials.token
         # user.oauth_expires_at = Time.at(auth.credentials.expires_at)
         user.skip_confirmation!

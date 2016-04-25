@@ -377,6 +377,7 @@ DEPENDENCIES
   font-awesome-sass (~> 4.5.0)
   jbuilder (~> 2.0)
   jquery-rails
+  json
   mailcatcher
   mini_magick
   omniauth-facebook
