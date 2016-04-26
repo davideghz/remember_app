@@ -47,12 +47,6 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update_attributes(user_params)
-
-    respond_to do |format|
-      format.html { redirect_to :back }
-      format.js
-    end
-
   end
 
   def destroy
