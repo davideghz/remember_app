@@ -12,9 +12,12 @@
           <div class="input-group">
             <%= content_tag(:div, icon('home'), class: "input-group-addon") %>
             <%= text_field_tag :address, "", class: 'form-control' %>
+            <span class="input-group-btn">
+              <%= submit_tag "Get coordinates", class: "btn btn-primary" %>
+            </span>
           </div>
         </div>
-        <%= submit_tag "Get coordinates", class: "btn btn-primary" %>
+
     <% end %>
     <hr>
     <p>coordinates for address <strong><%= @address.blank? ? "(insert address)" : @address %></strong></p>
