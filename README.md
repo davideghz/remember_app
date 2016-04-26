@@ -24,12 +24,12 @@ Rails 4.2.5
 - allow images uploading
 - internationalize the website
 - internationalize emails (send emails using user's custom set language)
+- access endpoints and parse JSON in order to retrieve and use data from 3rd party API
 
 ## future goals
 
 - improve datepicker (http://bit.ly/1TnCTdM)
 - use background jobs queues (mail?)
-- integrate a 3rd party API
 - build a RESTful API
 - use some REACT components
 - enable images saving to AWS

@@ -36,17 +36,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
-
-  # def self.from_omniauth(auth)
-  #   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-  #     user.email = auth.info.email
-  #     user.password = Devise.friendly_token[0,20]
-  #     user.name = auth.info.name
-  #     # user.image = auth.info.image # assuming the user model has an image
-  #     user.skip_confirmation!
-  #   end
-  # end
-
   def self.from_omniauth(auth)
     if self.where(email: auth.info.email).exists?
       return_user = self.where(email: auth.info.email).first

@@ -1,0 +1,12 @@
+class API::V1::UsersController < ApplicationController
+  respond_to :json
+
+  def index
+    @users = User.all
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
+
+end
