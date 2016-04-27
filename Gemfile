@@ -15,7 +15,7 @@ gem 'json'
 # open an http, https or ftp URL as though it were a file
 require 'open-uri'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'devise', '~> 3.5', '>= 3.5.5'
+gem 'devise'
 gem 'breadcrumbs_on_rails'
 gem 'carrierwave'
 gem 'mini_magick'
