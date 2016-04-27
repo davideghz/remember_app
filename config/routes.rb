@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   devise_for :users, only: :omniauth_callbacks, controllers: {omniauth_callbacks: 'users/omniauth_callbacks'}
 
-
   scope "(:locale)" do
     root 'static_pages#home'
     post '/' => 'static_pages#home'
