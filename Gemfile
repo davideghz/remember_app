@@ -22,6 +22,7 @@ gem 'mini_magick'
 gem 'fog'
 # Facebook OAuth2 Strategy for OmniAuth
 gem 'omniauth-facebook'
+gem 'simple_token_authentication'
 
 group :development, :test do
   gem 'sqlite3'

@@ -28,6 +28,10 @@
 
 class User < ActiveRecord::Base
 
+  acts_as_token_authenticatable
+
+  before_save :ensure_authentication_token
+
   has_many :vehicles, dependent: :destroy
   has_many :insurances, through: :vehicles
 
@@ -52,7 +56,6 @@ class User < ActiveRecord::Base
         user.skip_confirmation!
       end
     end
-
     return_user
   end
 
