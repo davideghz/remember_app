@@ -4,3 +4,12 @@ it:
   random_email:
     send_random_email:
       subject: "Questa è una mail alla cazzo di cane"
+
+  date:
+      formats:
+        default: ! '%d/%m/%Y'
+        short: ! '%d/%m/%Y'
+
+  datetime:
+      formats:
+        default: ! '%d/%m/%Y %H:%M'

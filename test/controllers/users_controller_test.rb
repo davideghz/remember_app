@@ -24,12 +24,11 @@
 #  provider               :string
 #  uid                    :string
 #  name                   :string
+#  authentication_token   :string(30)
 #
 
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
 end

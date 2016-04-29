@@ -24,7 +24,9 @@
 #  provider               :string
 #  uid                    :string
 #  name                   :string
+#  authentication_token   :string(30)
 #
 
 michael:
-  email: michael@example.com
+  email: davideghz@gmail.com
+  authentication_token: oFFuam5QiaiqS7R_zYoZ

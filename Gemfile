@@ -23,6 +23,7 @@ gem 'fog'
 # Facebook OAuth2 Strategy for OmniAuth
 gem 'omniauth-facebook'
 gem 'simple_token_authentication'
+gem 'bootstrap-datepicker-rails'
 
 group :development, :test do
   gem 'sqlite3'

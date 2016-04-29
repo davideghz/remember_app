@@ -24,6 +24,7 @@
 #  provider               :string
 #  uid                    :string
 #  name                   :string
+#  authentication_token   :string(30)
 #
 
 module UsersHelper

@@ -10,10 +10,26 @@
             <%= f.label :name, "Vehicle name" %>
             <%= f.text_field :name, class: 'form-control' %>
             <%= f.label :matriculation_date %>
-            <%= f.date_field :matriculation_date, class: 'form-control' %>
+            <%= f.hidden_field :matriculation_date %>
+            <%= content_tag(:div, nil, id: "datepicker_div") %>
+
             <%= f.submit "Add", class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  $('#datepicker_div').datepicker({
+    format: "mm/dd/yyyy",
+    weekStart: 1,
+    startView: 2,
+    calendarWeeks: true
+  });
+  $('#datepicker_div').on("changeDate", function() {
+    $('#vehicle_matriculation_date').val(
+        $('#datepicker_div').datepicker('getFormattedDate')
+    );
+  });
+</script>
