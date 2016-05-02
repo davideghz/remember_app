@@ -28,7 +28,7 @@ Rails 4.2.5
 
 ## future goals
 
-- improve datepicker (http://bit.ly/1TnCTdM)
+- use bootstrap datepicker (http://bit.ly/1TnCTdM)
 - use background jobs queues (mail?)
 - build a RESTful API
 - use some REACT components
