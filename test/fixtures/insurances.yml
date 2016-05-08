@@ -13,13 +13,3 @@
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-  issue_date: 2016-03-14
-  expiry_date: 2016-03-14
-
-two:
-  name: MyString
-  issue_date: 2016-03-14
-  expiry_date: 2016-03-14

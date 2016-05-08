@@ -10,7 +10,3 @@
 #  updated_at         :datetime         not null
 #  vehicle_picture    :string
 #
-
-v1:
-  name: test
-  matriculation_date: 2015/01/01
