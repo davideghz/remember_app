@@ -25,12 +25,13 @@ Rails 4.2.5
 - internationalize the website
 - internationalize emails (send emails using user's custom set language)
 - access endpoints and parse JSON in order to retrieve and use data from 3rd party API
+- use bootstrap datepicker (http://bit.ly/1TnCTdM)
+- build a RESTful API
+
 
 ## future goals
 
-- use bootstrap datepicker (http://bit.ly/1TnCTdM)
 - use background jobs queues (mail?)
-- build a RESTful API
 - use some REACT components
 - enable images saving to AWS
 - realtime application (create a car in a view, and you see it in the same view on another windows)
